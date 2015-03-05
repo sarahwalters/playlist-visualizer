@@ -1,0 +1,9 @@
+{{#if tracks}}
+	{{#each tracks}}
+		{{#if this.track}}
+			<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A{{this.track.id}}" width="340" height="80" frameborder="0" allowtransparency="true"></iframe>
+		{{/if}}
+	{{/each}}
+{{else}}
+	<p>Looks like you didn't contribute any tracks to this playlist.</p>
+{{/if}}

@@ -1,0 +1,7 @@
+{{#each this}}
+	{{#if this.name}}
+		<p>
+			<a href='/playlist/{{this.id}}' id={{this.id}}>{{this.name}}</a>
+		</p>
+	{{/if}}
+{{/each}}
