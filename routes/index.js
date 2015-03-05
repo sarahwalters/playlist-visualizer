@@ -18,19 +18,9 @@ routes.home = function(req, res) {
 };
 
 routes.play = function(req, res) {
-	var r = {
-		url: 'https://api.spotify.com/v1/users/'+req.user.id+'/playlists/'+req.params.id+'/tracks?limit=100&offset=0',
-		type: 'GET',
-		headers: {
-		    'Authorization' : 'Bearer ' + req.user.accessToken
-		}
-	};
-
-	request(r, function(error, response, body) {
-		var tracks = JSON.parse(body).items;		
-		res.render('tracks', {
-			tracks: tracks
-		});
+	res.render('player', {
+		playlistId: req.params.id,
+		userId: req.user.id
 	});
 }
 
